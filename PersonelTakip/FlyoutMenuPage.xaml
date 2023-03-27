@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:PersonelTakip"
+             Title="FlyoutMenu"
+             x:Class="PersonelTakip.FlyoutMenuPage">
+    <StackLayout Margin="15">
+        <ListView x:Name="listview" x:FieldModifier="public">
+            <ListView.ItemsSource>
+                <x:Array Type="{x:Type local:FlyoutItemPage}">
+                    <local:FlyoutItemPage Title="Profilim" IconSource="user_icon.png" TargetPage="{x:Type local:UserPage}"/>
+                    <local:FlyoutItemPage Title="İş Listem" IconSource="liste.png" TargetPage="{x:Type local:ListPage}"/>
+                    <local:FlyoutItemPage Title="İzin Yönetimi" IconSource="calendar.png" TargetPage="{x:Type local:Page1}"/>
+                    <local:FlyoutItemPage Title="Giriş Çıkış İşlemleri" IconSource="qr.png" TargetPage="{x:Type local:BarcodeScanner}"/>
+                    <local:FlyoutItemPage Title="Duyurular" IconSource="alarm.png" TargetPage="{x:Type local:Page2}"/>
+
+                </x:Array>
+            </ListView.ItemsSource>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="33"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Image Source="{Binding IconSource}"/>
+                            <Label Grid.Column="1" Text="{Binding Title}" 
+                                   FontSize="20" TextColor="Black" 
+                                   Margin="10,8,0,0"/>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>
+    
+    

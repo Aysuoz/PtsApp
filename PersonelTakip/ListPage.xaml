@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="İş Listem"
+             x:Class="PersonelTakip.ListPage">
+    <StackLayout Margin="30" Orientation="Vertical">
+
+        <Button Text="İş Listem" Command="{Binding AddCommand}" TextColor="White" BackgroundColor="DarkOrange"/>
+        <Entry x:Name="EntryText1" Placeholder="Yapılacakları Buraya Yazınız." 
+               TextChanged="EntryText1_TextChanged"
+               Margin="20"/>
+        <ListView x:Name="MyList" SeparatorVisibility="None" HasUnevenRows="True" ItemsSource="{Binding CollectionsList}" Footer="">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid Margin="10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Label VerticalOptions="CenterAndExpand" Text="{Binding Name}" />
+                            <Button Command="{Binding Path=BindingContext.DeleteCommand, Source={x:Reference MyList}}" 
+                                    CommandParameter="{Binding .}" Grid.Column="1" Padding="30,10" Text="Sil" 
+                                    HorizontalOptions="EndAndExpand" BackgroundColor="DarkOrange" TextColor="White"/>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>
+    
+    

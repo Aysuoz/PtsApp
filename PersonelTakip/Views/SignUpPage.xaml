@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:PersonelTakip"
+             x:Class="PersonelTakip.Views.SignUpPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Image Source="bg.png"/>
+
+            <Frame  CornerRadius="30" BackgroundColor="#F2F2F2"
+                    HeightRequest="50" Margin="50,70,50,0"
+                    Padding="30,0,0,0">
+                <Grid>
+                    <Image Source="bank.png" HorizontalOptions="Start"
+                           VerticalOptions="Center"
+                             Margin="-10,0,0,0"
+                             HeightRequest="20"/>
+                    <Image Source="search.png" HorizontalOptions="End"
+                           VerticalOptions="Center"
+                             Margin="10,0,25,0"
+                             HeightRequest="20"/>
+                    <Entry x:Name="vergiNo" HorizontalTextAlignment="Start" 
+                       PlaceholderColor="#B6B7B7" TextColor="Black" 
+                       Placeholder="VergiNumarası"
+                       Margin="35,0,50,0"/>
+
+                </Grid>
+            </Frame>
+
+            <Frame  CornerRadius="30" BackgroundColor="#F2F2F2"  
+                    HeightRequest="50" Margin="50,20,50,0"
+                    Padding="30,0,0,0">
+                <Grid>
+                    <Image Source="user.png" HorizontalOptions="Start"
+                           VerticalOptions="Center"
+                             Margin="-10,0,0,0"
+                             HeightRequest="20"/>
+                    <Entry x:Name="userName" HorizontalTextAlignment="Start" 
+                       PlaceholderColor="#B6B7B7" TextColor="Black" 
+                       Placeholder="KullanıcıAdı"                       
+                       Margin="35,0,50,0"/>
+                </Grid>
+            </Frame>
+
+            <Frame CornerRadius="30" BackgroundColor="#F2F2F2"
+                   HeightRequest="50" Margin="50,20,50,0"
+                   Padding="30,0,0,0">
+                <Grid>
+                    <Image Source="password.png" HorizontalOptions="Start"
+                           VerticalOptions="Center"
+                             Margin="-10,0,0,0"
+                             HeightRequest="20"/>
+                    <Entry x:Name="userPassword" HorizontalTextAlignment="Start" 
+                           PlaceholderColor="#B6B7B7" 
+                           Margin="40,0,50,0" TextColor="Black" 
+                           Placeholder="Şifre"
+                       IsPassword="{Binding Source={x:Reference ShowPasswordActualTrigger},
+                    Path=HidePassword}"/>
+
+                    <ImageButton VerticalOptions="Center"
+                             Margin="0,0,20,0"
+                             HeightRequest="20"
+                             HorizontalOptions="End"
+                             Source="eye_hide.png">
+                        <ImageButton.Triggers>
+                            <EventTrigger Event="Clicked">
+                                <local:ShowPasswordTriggerAction ShowIcon="eye"
+                                                     HideIcon="eye_hide"
+                                                     x:Name="ShowPasswordActualTrigger"/>
+                            </EventTrigger>
+                        </ImageButton.Triggers>
+                    </ImageButton>
+                </Grid>
+            </Frame>
+
+            <Button Command="{Binding Sign}" Text="Kayıt Ol" 
+                    HorizontalOptions="Center"
+                    Margin="20"
+                    WidthRequest="250"
+                    BackgroundColor="DarkOrange" 
+                    TextColor="White" FontAttributes="Bold" 
+                    CornerRadius="30"
+                    Clicked="Button_Clicked" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
+    

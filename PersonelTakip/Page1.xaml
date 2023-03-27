@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="İzin Yönetimi"
+             x:Class="PersonelTakip.Page1">
+
+    <ContentPage.Content >
+
+        <StackLayout Margin="50,50,50,50" 
+                     Padding="25,20,40,0">
+
+            <Label Margin="5" Text="Başlangıç Tarihi:"
+                   TextDecorations="Underline"
+                   TextColor="DarkOrange"
+                   FontSize="17"
+                   FontAttributes="Bold"/>
+            <DatePicker Margin="5" x:Name="startDate" />
+            <Label Margin="5" Text="Başlangıç Saati:"
+                   TextDecorations="Underline"
+                   TextColor="DarkOrange"
+                   FontSize="17"
+                   FontAttributes="Bold"/>
+            <TimePicker Margin="5" x:Name="startTime" />
+            <Label Margin="5" Text="Bitiş Tarihi:"
+                   TextDecorations="Underline"
+                   TextColor="DarkOrange"
+                   FontSize="17"
+                   FontAttributes="Bold"/>
+            <DatePicker Margin="5" x:Name="endDate"/>
+            <Label Margin="5" Text="Bitiş Saati:"
+                   TextDecorations="Underline"
+                   TextColor="DarkOrange"
+                   FontSize="17"
+                   FontAttributes="Bold"/>
+            <TimePicker Margin="5" x:Name="endTime" />
+            <Label Margin="5" Text="İzin Açıklaması:"
+                   TextDecorations="Underline"
+                   TextColor="DarkOrange"
+                   FontSize="17"
+                   FontAttributes="Bold"/>
+            <Entry  />
+            <Button x:Name="izinbtn"
+                    Text="İzin Talep Et"
+                    BackgroundColor="DarkOrange"
+                    CornerRadius="30"
+                    TextColor="White"
+                    Margin="5"
+                    Clicked="izinbtn_Clicked"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
+    
